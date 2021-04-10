@@ -1,0 +1,44 @@
+kube command to printo kubeadm join token
+
+kubeadm token create --print-join-command
+
+kube command to join cluster
+
+kubeadm join 192.168.0.5:6443 --token uakz4b.ma7c9ypjrf1bg31b --discovery-token-ca-cert-hash sha256:7830399ea7b7b3b2f9f648cd61908587c71e5f471afdb42c71af34fd97f22b20
+
+habilita autocomplete kubernetes
+
+kubectl completion bash > /etc/bash_completion.d/kubectl
+
+Comando para trazer pods de todo o cluster + descrição
+
+kubectl get pods -n kube-system -o wide
+
+Pod é a menor unidade do kubernetes, dentro dele pode haver 1 ou mais containers
+
+Comando trás todas as informacoes de um pod
+
+kubectl describe pods -n kube-system weave-net-dd756
+
+Similar ao docker run, o kubectl run baixa e cria um pod 
+
+kubectl run nginx --image=nginx
+
+Pega o template gerado pelo kubectl run e joga no arquivo 
+
+kubectl run nginx --image=nginx --dry-run=client -o yaml > meu_segundo_pod.yaml
+
+Documentação via linha de comando 
+
+kubectl explain pod
+kubectl explain namespace
+kubectl explain node
+kubectl explain ...
+
+Printa todos os recursos
+
+kubectl get all
+
+Printa recursos que voce lista
+
+kubectl get pods,services,endpoints
